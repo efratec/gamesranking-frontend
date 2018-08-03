@@ -1,0 +1,23 @@
+<form style="padding: 0 35px" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" name="name" [(ngModel)]="player.name" id="name" placeholder="Enter name">
+    <small id="name" class="form-text text-muted">Insert name of player.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="victories">Victories</label>
+    <input type="number" class="form-control" name="victories" [(ngModel)]="player.victories" id="victories" placeholder="Enter number of victories">
+    <small id="victories" class="form-text text-muted">Enter numbers of victories player.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="matches">Matches</label>
+    <input type="number" class="form-control" name="matches" [(ngModel)]="player.matches" id="matches" placeholder="Enter number of matches">
+    <small id="matches" class="form-text text-muted">Enter numbers of matches player.</small>
+  </div>
+
+  <button type="submit" class="btn btn-primary" style="margin-right: 15px">Submit</button>
+  <button (click)="delete()" *ngIf="player.id" type="button" class="btn btn-danger" style="margin-right: 15px">Delete</button>
+  <a routerLink="/ranking" class="btn btn-default">Back</a>
+</form>

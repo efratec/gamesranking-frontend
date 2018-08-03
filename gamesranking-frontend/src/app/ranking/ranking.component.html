@@ -1,0 +1,28 @@
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+  <h6 class="border-bottom border-gray pb-2 mb-0">Ranking</h6>
+  <div style="text-align: center" *ngIf="!playerService.players.length">
+    <img src="assets/img/add.png"/>
+    <br/><br/>
+    <a routerLink="/player" class="btn btn-danger">Add Player</a>
+  </div>
+  <table class="table" *ngIf="playerService.players.length">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Victories</th>
+        <th scope="col">Matches</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of playerService.players">
+        <td>{{ player.id }}</td>
+        <td>{{ player.name }}</td>
+        <td>{{ player.victories }}</td>
+        <td>{{ player.matches }}</td>
+        <td style="text-align: right"><button (click)="edit(player)" type="button" class="btn btn-sm btn-secondary">edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
